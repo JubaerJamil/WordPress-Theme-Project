@@ -1,0 +1,28 @@
+.comment-form input[type='text']{
+    width: 100%;
+}
+
+.comment-form input[type='submit']{
+    width: 30%;
+    color: aliceblue;
+    padding-right: 7px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    background-color: rgb(26,118,209);
+}
+
+.comment-body{
+    margin-top: 20px;
+}
+
+.reply {
+    color: #11b177;
+}
+
+.commentmetadata {
+    color: #1445d3;
+}
+
+.fn {
+    color: black;
+}
