@@ -130,7 +130,7 @@
 
                                     foreach($allCategories as $category){
                                 ?>
-                                    <li><a href="#"><?php echo $category-> name;?></a></li>
+                                    <li><a href="<?php echo esc_url(get_category_link( $category->term_id)); ?>"><?php echo esc_html($category-> name);?></a></li>
                                     <?php
                                     }
                                 ?>

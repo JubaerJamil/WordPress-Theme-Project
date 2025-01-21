@@ -4,7 +4,8 @@ add_action( 'after_setup_theme', 'doctortheme');
 
 if(!function_exists('doctortheme')){
     function doctortheme(){
-        add_theme_support('post-thumbnails', array('post', 'page'));
+        // add_theme_support('post-thumbnails', array('post', 'page'));
+        add_theme_support('post-thumbnails');
         add_theme_support( 'post-formats', array('aside', 'image', 'video', 'gallery', 'quote') );
 
         add_action('wp_enqueue_scripts', 'wpdesignscript');
@@ -93,28 +94,10 @@ if(!function_exists('doctortheme')){
 
     }
 }
+    // all meta box function
+require get_template_directory()."/inc/customPost/all_meta_box.php";
 
-
-
-add_action('init', 'handle_contact_form_submission');
-
-function handle_contact_form_submission() {
-    if (isset($_POST['submit_contact_form'])) {
-        $first_name = sanitize_text_field($_POST['first-name']);
-        $last_name = sanitize_text_field($_POST['last-name']);
-        $email = sanitize_email($_POST['email']);
-        $message = sanitize_textarea_field($_POST['message']);
-
-        // Example: Send an email
-        $to = get_option('admin_email'); // Send to admin email
-        $subject = "Contact Form Submission from $first_name $last_name";
-        $body = "Message: $message\n\nEmail: $email";
-        $headers = ['Content-Type: text/html; charset=UTF-8'];
-
-        wp_mail($to, $subject, $body, $headers);
-
-        // Redirect or display success message
-        wp_redirect(home_url()); // Change '/thank-you/' to your thank-you page
-        exit;
-    }
-}
+    // all custop post type function
+require get_template_directory()."/inc/customPost/slider.php";
+require get_template_directory()."/inc/customPost/service.php";
+require get_template_directory()."/inc/customPost/count_down.php";

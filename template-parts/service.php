@@ -10,6 +10,7 @@
 					</div>
 				</div>
 				<div class="row">
+
 					<div class="col-lg-4 col-md-6 col-12">
 						<!-- Start Single Service -->
 						<div class="single-service">
@@ -19,6 +20,7 @@
 						</div>
 						<!-- End Single Service -->
 					</div>
+
 					<div class="col-lg-4 col-md-6 col-12">
 						<!-- Start Single Service -->
 						<div class="single-service">
@@ -28,6 +30,7 @@
 						</div>
 						<!-- End Single Service -->
 					</div>
+					
 					<div class="col-lg-4 col-md-6 col-12">
 						<!-- Start Single Service -->
 						<div class="single-service">
