@@ -1,5 +1,4 @@
 <?php
-add_action( 'init', 'serviceCustomPost');
 
 if(!function_exists('serviceCustomPost')){
     function serviceCustomPost(){
@@ -22,3 +21,5 @@ if(!function_exists('serviceCustomPost')){
         ));
     }
 }
+
+add_action( 'init', 'serviceCustomPost');

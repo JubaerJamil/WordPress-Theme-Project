@@ -43,7 +43,7 @@ if(!function_exists('countDownMetaBox')){
 
 if(!function_exists('count_down_html')){
     function count_down_html($post){
-            $iconValueCount = get_post_meta( $post->ID, 'count_Down_Unique_Key', true)
+            $iconValueCount = get_post_meta( $post->ID, 'count_Down_Unique_Key', true);
         ?>
             <input type="text" name="add_icon_count_down" id="add_icon_count_down" class="form-control" value="<?php echo $iconValueCount; ?>">
         <?php
@@ -68,3 +68,37 @@ if(!function_exists('save_count_down')){
 add_action( 'save_post', 'save_count_down');
 
 // count down meta box end
+
+// Service section 2 meta box start
+if(!function_exists('myServiceMetaBox')){
+    function myServiceMetaBox(){
+        add_meta_box( 'myServiceMetaId', 'Add Icon', 'my_service_html', 'my_service');
+    }
+}
+
+if(!function_exists('my_service_html')){
+    function my_service_html($post){
+            $iconValueMyService = get_post_meta( $post->ID, 'my_Service_Unique_Key', true);
+        ?>
+            <input type="text" name="add_icon_my_service" id="add_icon_my_service" class="form-control" value="<?php echo $iconValueMyService; ?>">
+        <?php
+    }
+}
+add_action('add_meta_boxes', 'myServiceMetaBox');
+
+
+if(!function_exists('save_My_Service')){
+    function save_My_Service($post_id){
+        if(isset($_POST['add_icon_my_service'])){
+            update_post_meta( 
+                $post_id,
+                'my_Service_Unique_Key',
+                sanitize_text_field($_POST['add_icon_my_service'])
+            );
+        }
+    }
+}
+
+add_action( 'save_post', 'save_My_Service');
+
+// Service section 2 meta box end

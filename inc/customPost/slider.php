@@ -1,7 +1,5 @@
 <?php
 
-add_action( 'init', 'myCustomPost');
-
 if(!function_exists('myCustomPost')){
     function myCustomPost(){
         register_post_type( 'MyOwnSlider', 
@@ -24,4 +22,6 @@ if(!function_exists('myCustomPost')){
         ) );
     }
 }
+
+add_action( 'init', 'myCustomPost');
 

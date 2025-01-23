@@ -20,8 +20,15 @@
 					<div class="col-lg-4 col-md-6 col-12 mt-2">
 						<!-- Single Blog -->
 						<div class="single-news">
+							<style>
+								.fixed-size {
+									width: 350px !important;
+									height: 234px !important;
+									object-fit: fill;
+								}
+							</style>
 							<div class="news-head">
-								<?php the_post_thumbnail('full', ['class' => 'img-responsive responsive--full', 'title' => 'Feature image']);?>
+								<?php the_post_thumbnail('full', ['class' => 'img-responsive responsive--full fixed-size', 'title' => 'Feature image']);?>
 							</div>
 							<div class="news-body">
 								<div class="news-content">

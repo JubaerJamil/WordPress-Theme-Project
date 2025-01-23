@@ -1,7 +1,5 @@
 <?php
 
-add_action( 'init', 'count_down_section');
-
 if(!function_exists('count_down_section')){
     function count_down_section(){
         register_post_type( 'count_down', array(
@@ -22,3 +20,5 @@ if(!function_exists('count_down_section')){
         ));
     }
 }
+
+add_action( 'init', 'count_down_section');
