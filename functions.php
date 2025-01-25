@@ -4,8 +4,6 @@ add_action( 'after_setup_theme', 'doctortheme');
 
 if(!function_exists('doctortheme')){
     function doctortheme(){
-        require_once get_theme_file_path(). '/theme-option/codestar-framework.php';
-        require_once get_theme_file_path(). '/theme-option/samples/codeStarFrameword.php';
 
         // add_theme_support('post-thumbnails', array('post', 'page'));
         add_theme_support('post-thumbnails');
@@ -97,8 +95,12 @@ if(!function_exists('doctortheme')){
 
     }
 }
-// for custom post page not found error solve
+    // for custom post page not found error solve
 flush_rewrite_rules( false );
+
+    // codestar frameword
+require_once get_theme_file_path(). '/inc/theme-option/codestar-framework.php';
+require_once get_theme_file_path(). '/inc/theme-option/samples/codeStarFrameword.php';
 
     // all meta box function
 require get_template_directory()."/inc/customPost/all_meta_box.php";

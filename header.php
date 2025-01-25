@@ -56,9 +56,13 @@
 						</div>
 						<div class="col-lg-6 col-md-7 col-12">
 							<!-- Top Contact -->
+							 <?php
+							 	$options = get_option( 'myThemeOption' ); // unique id of the framework
+								// var_dump($options);
+							 ?>
 							<ul class="top-contact">
-								<li><i class="fa fa-phone"></i>+880 1234 56789</li>
-								<li><i class="fa fa-envelope"></i><a href="mailto:support@yourmail.com">support@yourmail.com</a></li>
+								<li><i class="fa fa-phone"></i><?php echo $options['cell_phone_number']; ?></li>
+								<li><i class="fa fa-envelope"></i><a href="mailto:<?php echo $options['header_email']; ?>"><?php echo $options['header_email']; ?></a></li>
 							</ul>
 							<!-- End Top Contact -->
 						</div>
@@ -74,7 +78,7 @@
 							<div class="col-lg-3 col-md-3 col-12">
 								<!-- Start Logo -->
 								<div class="logo">
-									<a href="<?php echo home_url();?>"><img src="<?php echo get_template_directory_uri();?>/assets/img/logo.png" alt="#"></a>
+									<a href="<?php echo home_url();?>"><img src="<?php echo $options['header_logo']['url']; ?>" alt="#"></a>
 								</div>
 								<!-- End Logo -->
 								<!-- Mobile Nav -->

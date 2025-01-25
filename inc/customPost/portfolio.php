@@ -38,7 +38,7 @@ if(!function_exists('create_portfolio_cpt')){
             'description' => __( 'portfolio', 'textdomain' ),
             'labels' => $labels,
             'menu_icon' => '',
-            'supports' => array('title','editor', 'thumbnail'),
+            'supports' => array('title', 'author', 'excerpt'),
             'taxonomies' => array(),
             'public' => true,
             'show_ui' => true,
