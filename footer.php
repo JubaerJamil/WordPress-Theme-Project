@@ -5,15 +5,23 @@
 					<div class="row">
 						<div class="col-lg-3 col-md-6 col-12">
 							<div class="single-footer">
+							<?php
+							 	$options = get_option( 'myThemeOption' ); // unique id of the framework
+								$allSocialdata = $options['all_social_data'];
+								// var_dump($jamil);
+							 ?>
 								<h2>About Us</h2>
-								<p>Lorem ipsum dolor sit am consectetur adipisicing elit do eiusmod tempor incididunt ut labore dolore magna.</p>
+								<p><?php echo $options['f_about']; ?></p>
 								<!-- Social -->
 								<ul class="social">
-									<li><a href="#"><i class="icofont-facebook"></i></a></li>
-									<li><a href="#"><i class="icofont-google-plus"></i></a></li>
-									<li><a href="#"><i class="icofont-twitter"></i></a></li>
-									<li><a href="#"><i class="icofont-vimeo"></i></a></li>
-									<li><a href="#"><i class="icofont-pinterest"></i></a></li>
+									<?php 
+										foreach($allSocialdata as $socialdata){	
+									?>
+									<li><a href="<?php echo $socialdata['opt-textarea'];?>"><i class="<?php echo $socialdata['social_icon'];?>"></i></a></li>
+									<?php
+									}
+									?>
+								
 								</ul>
 								<!-- End Social -->
 							</div>
@@ -23,22 +31,35 @@
 								<h2>Quick Links</h2>
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-12">
-										<ul>
-											<li><a href="<?php echo home_url();?>"><i class="fa fa-caret-right" aria-hidden="true"></i>Home</a></li>
+
+									<?php 
+										wp_nav_menu( array(
+											'theme_location' => 'primary_menu',
+											"link_before" => '<i class="fa fa-caret-right" aria-hidden="true"></i>'
+										));							 
+										?>
+										<!-- <ul>
+											<li><a href="<?php //echo home_url();?>"><i class="fa fa-caret-right" aria-hidden="true"></i>Home</a></li>
 											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>About Us</a></li>
 											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Services</a></li>
 											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Our Cases</a></li>
 											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Other Links</a></li>	
-										</ul>
+										</ul> -->
 									</div>
 									<div class="col-lg-6 col-md-6 col-12">
-										<ul>
+									<?php 
+										wp_nav_menu( array(
+											'theme_location' => 'footer_menu',
+											"link_before" => '<i class="fa fa-caret-right" aria-hidden="true"></i>'
+										));							 
+										?>
+										<!-- <ul>
 											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Consuling</a></li>
 											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Finance</a></li>
 											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Testimonials</a></li>
 											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>FAQ</a></li>
 											<li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Contact Us</a></li>	
-										</ul>
+										</ul> -->
 									</div>
 								</div>
 							</div>
@@ -74,8 +95,12 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-12 col-md-12 col-12">
+						<?php
+							 	$options = get_option( 'myThemeOption' ); // unique id of the framework
+								// var_dump($options);
+							 ?>
 							<div class="copyright-content">
-								<p>© Copyright 2018  |  All Rights Reserved by <a href="https://www.wpthemesgrid.com" target="_blank">wpthemesgrid.com</a> </p>
+								<p><?php echo $options['copy_right']; ?> <a href="<?php echo $options['dev_author']; ?>" target="_blank">jubaer jamil</a> </p>
 							</div>
 						</div>
 					</div>
@@ -87,5 +112,11 @@
 		
 		
         <?php wp_footer(); ?>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("ul.sub-menu").addClass("dropdown");
+			})
+		</script>
     </body>
 </html>

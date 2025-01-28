@@ -24,7 +24,7 @@ CSF::createSection( $prefix, array(
 ) );
 
 //
-// Field: text
+// Header Section
 //
 CSF::createSection( $prefix, array(
   'parent'      => 'basic_fields',
@@ -54,63 +54,78 @@ CSF::createSection( $prefix, array(
       'url'   => false,
     ),
 
- 
-
   )
 ) );
 
 //
-// Field: textarea
+// footer section
 //
 CSF::createSection( $prefix, array(
   'parent'      => 'basic_fields',
-  'title'       => 'Textarea',
+  'title'       => 'Footer',
   'icon'        => 'far fa-square',
-  'description' => 'Visit documentation for more details on this field: <a href="http://codestarframework.com/documentation/#/fields?id=textarea" target="_blank">Field: textrea</a>',
+  'description' => 'Wp Theme',
   'fields'      => array(
 
     array(
-      'id'    => 'opt-textarea-1',
+      'id'    => 'copy_right',
+      'type'  => 'text',
+      'title' => 'Copy Right',
+    ),
+
+    array(
+      'id'    => 'dev_author',
+      'type'  => 'text',
+      'title' => 'Development Author',
+    ),
+
+    array(
+      'id'    => 'f_about',
       'type'  => 'textarea',
-      'title' => 'Textarea',
+      'title' => 'Footer About',
     ),
 
     array(
-      'id'      => 'opt-textarea-2',
-      'type'    => 'textarea',
-      'title'   => 'Textarea wtih default',
-      'default' => 'This is default value bla bla bla',
+      'id'     => 'all_social_data',
+      'type'   => 'group',
+      'title'  => 'Footer Social Icon',
+      'fields' => array(
+        array(
+          'id'    => 'opt-text',
+          'type'  => 'text',
+          'title' => 'Social site name',
+        ),
+
+        array(
+          'id'    => 'social_icon',
+          'type'  => 'text',
+          'title' => 'Icon',
+        ),
+        array(
+          'id'    => 'opt-switcher',
+          'type'  => 'switcher',
+          'title' => 'Status',
+        ),
+        array(
+          'id'    => 'opt-textarea',
+          'type'  => 'text',
+          'title' => 'Social Link',
+        ),
+      ),
+      'default' => array(
+        array(
+          'opt-text'     => 'Some text 1',
+          'opt-switcher' => true,
+          'opt-textarea' => 'Some textarea content 1',
+        ),
+        array(
+          'opt-text'     => 'Some text 2',
+          'opt-switcher' => false,
+          'opt-textarea' => 'Some textarea content 2',
+        ),
+      )
     ),
 
-    array(
-      'id'          => 'opt-textarea-3',
-      'type'        => 'textarea',
-      'title'       => 'Text with placeholder',
-      'placeholder' => 'Typed something...'
-    ),
-
-    array(
-      'id'         => 'opt-textarea-4',
-      'type'       => 'textarea',
-      'title'      => 'Textarea with shortcoder',
-      'shortcoder' => 'csf_demo_shortcodes',
-    ),
-
-    array(
-      'id'       => 'opt-textarea-5',
-      'type'     => 'textarea',
-      'title'    => 'Textarea field ingenuity',
-      'subtitle' => 'The field of subtitle text.',
-      'help'     => 'The field of help text.',
-      'before'   => '<p>The field of before text.</p>',
-      'after'    => '<p>The field of after text.</p>',
-    ),
-
-    array(
-      'id'    => 'opt-textarea-6',
-      'type'  => 'textarea',
-      'after' => '<p>It shows full width if there is no field of title.</p>',
-    ),
 
   )
 ) );
@@ -120,270 +135,61 @@ CSF::createSection( $prefix, array(
 //
 CSF::createSection( $prefix, array(
   'parent'      => 'basic_fields',
-  'title'       => 'Select',
+  'title'       => 'Why choose us',
   'icon'        => 'fas fa-list',
-  'description' => 'Visit documentation for more details on this field: <a href="http://codestarframework.com/documentation/#/fields?id=select" target="_blank">Field: select</a>',
+  'description' => 'WP Theme',
   'fields'      => array(
 
     array(
-      'id'          => 'opt-select-1',
-      'type'        => 'select',
-      'title'       => 'Select',
-      'placeholder' => 'Select an option',
-      'options'     => array(
-        'opt-1'     => 'Option 1',
-        'opt-2'     => 'Option 2',
-        'opt-3'     => 'Option 3',
-      ),
+      'id'    => 'why_head_title',
+      'type'  => 'text',
+      'title' => 'Head Title',
     ),
 
     array(
-      'id'          => 'opt-select-2',
-      'type'        => 'select',
-      'title'       => 'Select with default',
-      'placeholder' => 'Select an option',
-      'options'     => array(
-        'opt-1'     => 'Option 1',
-        'opt-2'     => 'Option 2',
-        'opt-3'     => 'Option 3',
-      ),
-      'default'     => 'opt-2'
+      'id'    => 'head_content',
+      'type'  => 'text',
+      'title' => 'Head Content',
     ),
 
     array(
-      'id'          => 'opt-select-3',
-      'type'        => 'select',
-      'title'       => 'Select with group related options',
-      'placeholder' => 'Select an option',
-      'options'     => array(
-        'Group 1'   => array(
-          'opt-1'   => 'Option 1',
-          'opt-2'   => 'Option 2',
-          'opt-3'   => 'Option 3',
-        ),
-        'Group 2'   => array(
-          'opt-4'   => 'Option 4',
-          'opt-5'   => 'Option 5',
-          'opt-6'   => 'Option 6',
-        ),
-        'Group 3'   => array(
-          'opt-7'   => 'Option 7',
-          'opt-8'   => 'Option 8',
-          'opt-9'   => 'Option 9',
+      'id'    => 'main_content',
+      'type'  => 'textarea',
+      'title' => 'Main Content',
+    ),
+
+    array(
+      'id'    => 'video_link',
+      'type'  => 'text',
+      'title' => 'Video Link',
+    ),
+
+    array(
+      'id'     => 'loop_content_main',
+      'type'   => 'repeater',
+      'title'  => 'Loop Content 1',
+      'fields' => array(
+        array(
+          'id'    => 'loop_content',
+          'type'  => 'text',
+          'title' => 'Content'
         ),
       ),
     ),
 
     array(
-      'id'         => 'opt-select-4',
-      'type'       => 'select',
-      'title'      => 'Select with multiple choice',
-      'multiple'   => true,
-      'attributes' => array(
-        'style'    => 'min-width: 200px;'
-      ),
-      'options'    => array(
-        'opt-1'    => 'Option 1',
-        'opt-2'    => 'Option 2',
-        'opt-3'    => 'Option 3',
-        'opt-4'    => 'Option 4',
-        'opt-5'    => 'Option 5',
-        'opt-6'    => 'Option 6',
-      ),
-      'default'    => array( 'opt-2', 'opt-3' ),
-    ),
-
-    array(
-      'type'    => 'notice',
-      'style'   => 'info',
-      'content' => 'Select with <strong>chosen</strong> style.',
-    ),
-
-    array(
-      'id'          => 'opt-select-5',
-      'type'        => 'select',
-      'title'       => 'Select with Chosen',
-      'chosen'      => true,
-      'placeholder' => 'Select an option',
-      'options'     => array(
-        'opt-1'     => 'Option 1',
-        'opt-2'     => 'Option 2',
-        'opt-3'     => 'Option 3',
-        'opt-4'     => 'Option 4',
-        'opt-5'     => 'Option 5',
-        'opt-6'     => 'Option 6',
+      'id'     => 'loop_content_main_2',
+      'type'   => 'repeater',
+      'title'  => 'Loop Content 2',
+      'fields' => array(
+        array(
+          'id'    => 'loop_content_2',
+          'type'  => 'text',
+          'title' => 'Content 2'
+        ),
       ),
     ),
 
-    array(
-      'id'          => 'opt-select-6',
-      'type'        => 'select',
-      'title'       => 'Select with multiple Chosen',
-      'chosen'      => true,
-      'multiple'    => true,
-      'placeholder' => 'Select an option',
-      'options'     => array(
-        'opt-1'     => 'Option 1',
-        'opt-2'     => 'Option 2',
-        'opt-3'     => 'Option 3',
-        'opt-4'     => 'Option 4',
-        'opt-5'     => 'Option 5',
-        'opt-6'     => 'Option 6',
-      ),
-    ),
-
-    array(
-      'id'          => 'opt-select-7',
-      'type'        => 'select',
-      'title'       => 'Select with multiple Chosen and Sortable',
-      'chosen'      => true,
-      'multiple'    => true,
-      'sortable'    => true,
-      'placeholder' => 'Select an option',
-      'options'     => array(
-        'opt-1'     => 'Option 1',
-        'opt-2'     => 'Option 2',
-        'opt-3'     => 'Option 3',
-        'opt-4'     => 'Option 4',
-        'opt-5'     => 'Option 5',
-        'opt-6'     => 'Option 6',
-      ),
-      'default'     => array( 'opt-1', 'opt-2', 'opt-3' )
-    ),
-
-    array(
-      'id'          => 'opt-select-8',
-      'type'        => 'select',
-      'title'       => 'Select with multiple AJAX search Pages',
-      'chosen'      => true,
-      'multiple'    => true,
-      'sortable'    => true,
-      'ajax'        => true,
-      'options'     => 'pages',
-      'placeholder' => 'Select pages',
-    ),
-
-    array(
-      'id'          => 'opt-select-9',
-      'type'        => 'select',
-      'title'       => 'Select with multiple AJAX search Posts',
-      'chosen'      => true,
-      'multiple'    => true,
-      'sortable'    => true,
-      'ajax'        => true,
-      'options'     => 'posts',
-      'placeholder' => 'Select posts',
-    ),
-
-    array(
-      'id'          => 'opt-select-10',
-      'type'        => 'select',
-      'title'       => 'Select with AJAX search Category',
-      'chosen'      => true,
-      'ajax'        => true,
-      'options'     => 'category',
-      'placeholder' => 'Select a category',
-    ),
-
-    array(
-      'type'    => 'notice',
-      'style'   => 'info',
-      'content' => 'Select with <strong>predefined wp query</strong> options.',
-    ),
-
-    array(
-      'id'          => 'opt-select-11',
-      'type'        => 'select',
-      'title'       => 'Select with pages',
-      'placeholder' => 'Select a page',
-      'options'     => 'pages',
-    ),
-
-    array(
-      'id'          => 'opt-select-12',
-      'type'        => 'select',
-      'title'       => 'Select with posts',
-      'placeholder' => 'Select a post',
-      'options'     => 'posts',
-    ),
-
-    array(
-      'id'          => 'opt-select-13',
-      'type'        => 'select',
-      'title'       => 'Select with categories',
-      'placeholder' => 'Select a category',
-      'options'     => 'categories',
-    ),
-
-    array(
-      'id'          => 'opt-select-14',
-      'type'        => 'select',
-      'title'       => 'Select with menus',
-      'placeholder' => 'Select a menu',
-      'options'     => 'menus',
-    ),
-
-    array(
-      'id'          => 'opt-select-15',
-      'type'        => 'select',
-      'title'       => 'Select with locations',
-      'placeholder' => 'Select a location',
-      'options'     => 'locations',
-    ),
-
-    array(
-      'id'          => 'opt-select-16',
-      'type'        => 'select',
-      'title'       => 'Select with sidebars',
-      'placeholder' => 'Select a sidebar',
-      'options'     => 'sidebars',
-    ),
-
-    array(
-      'id'          => 'opt-select-17',
-      'type'        => 'select',
-      'title'       => 'Select with wp roles',
-      'placeholder' => 'Select a role',
-      'options'     => 'roles',
-    ),
-
-    array(
-      'id'          => 'opt-select-18',
-      'type'        => 'select',
-      'title'       => 'Select with users',
-      'placeholder' => 'Select a user',
-      'options'     => 'users',
-    ),
-
-    array(
-      'id'          => 'opt-select-19',
-      'type'        => 'select',
-      'title'       => 'Select with post type',
-      'placeholder' => 'Select a post type',
-      'options'     => 'post_types',
-    ),
-
-    array(
-      'id'          => 'opt-select-20',
-      'type'        => 'select',
-      'title'       => 'Select with CPT (custom post type) posts',
-      'placeholder' => 'Select a post',
-      'options'     => 'posts',
-      'query_args'  => array(
-        'post_type' => 'your_post_type_name',
-      ),
-    ),
-
-    array(
-      'id'          => 'opt-select-21',
-      'type'        => 'select',
-      'title'       => 'Select with CPT (custom post type) categories',
-      'placeholder' => 'Select a category',
-      'options'     => 'categories',
-      'query_args'  => array(
-        'taxonomy'  => 'your_taxonomy_name',
-      ),
-    ),
 
   )
 ) );
@@ -393,115 +199,23 @@ CSF::createSection( $prefix, array(
 //
 CSF::createSection( $prefix, array(
   'parent'      => 'basic_fields',
-  'title'       => 'Checkbox',
+  'title'       => 'Emergency Number',
   'icon'        => 'fas fa-check-square',
-  'description' => 'Visit documentation for more details on this field: <a href="http://codestarframework.com/documentation/#/fields?id=checkbox" target="_blank">Field: checkbox</a>',
+  'description' => 'WP Theme',
   'fields'      => array(
 
     array(
-      'id'    => 'opt-checkbox-1',
-      'type'  => 'checkbox',
-      'title' => 'Checkbox',
-      'label' => 'The label text of the checkbox.',
+      'id'    => 'emergency_content',
+      'type'  => 'text',
+      'title' => 'Emergency Content',
     ),
 
     array(
-      'id'      => 'opt-checkbox-2',
-      'type'    => 'checkbox',
-      'title'   => 'Checkbox with default',
-      'label'   => 'The label text of the checkbox.',
-      'default' => true,
+      'id'    => 'emergency_number',
+      'type'  => 'text',
+      'title' => 'Emergency Number',
     ),
 
-    array(
-      'id'      => 'opt-checkbox-3',
-      'type'    => 'checkbox',
-      'title'   => 'Checkbox with multiple choice',
-      'options' => array(
-        'opt-1' => 'Option 1',
-        'opt-2' => 'Option 2',
-        'opt-3' => 'Option 3',
-      ),
-    ),
-
-    array(
-      'id'      => 'opt-checkbox-4',
-      'type'    => 'checkbox',
-      'title'   => 'Checkbox inline with multiple choice',
-      'inline'  => true,
-      'options' => array(
-        'opt-1' => 'Option 1',
-        'opt-2' => 'Option 2',
-        'opt-3' => 'Option 3',
-      ),
-    ),
-
-    array(
-      'id'      => 'opt-checkbox-5',
-      'type'    => 'checkbox',
-      'title'   => 'Checkbox multiple choice with default',
-      'options' => array(
-        'opt-1' => 'Option 1',
-        'opt-2' => 'Option 2',
-        'opt-3' => 'Option 3',
-      ),
-      'default' => array( 'opt-1', 'opt-2' )
-    ),
-
-    array(
-      'id'        => 'opt-checkbox-6',
-      'type'      => 'checkbox',
-      'title'     => 'Checkbox with group related options',
-      'options'   => array(
-        'Group 1' => array(
-          'opt-1' => 'Option 1',
-          'opt-2' => 'Option 2',
-          'opt-3' => 'Option 3',
-        ),
-        'Group 2' => array(
-          'opt-4' => 'Option 4',
-          'opt-5' => 'Option 5',
-          'opt-6' => 'Option 6',
-        ),
-      ),
-    ),
-
-    array(
-      'id'       => 'opt-checkbox-7',
-      'type'     => 'checkbox',
-      'title'    => 'Checkbox testing on many items',
-      'options'  => array(
-        'opt-1'  => 'Option 1',
-        'opt-2'  => 'Option 2',
-        'opt-3'  => 'Option 3',
-        'opt-4'  => 'Option 4',
-        'opt-5'  => 'Option 5',
-        'opt-6'  => 'Option 6',
-        'opt-7'  => 'Option 7',
-        'opt-8'  => 'Option 8',
-        'opt-9'  => 'Option 9',
-        'opt-10' => 'Option 10',
-        'opt-11' => 'Option 11',
-        'opt-12' => 'Option 12',
-        'opt-13' => 'Option 13',
-        'opt-14' => 'Option 14',
-        'opt-15' => 'Option 15',
-      ),
-      'desc'     => 'Vertical scroll showing automatically after add many items',
-    ),
-
-    array(
-      'type'    => 'notice',
-      'style'   => 'info',
-      'content' => 'Checkbox with <strong>predefined wp query</strong> options similar like <strong>select</strong> field. (see select field for all options models.)',
-    ),
-
-    array(
-      'id'      => 'opt-checkbox-8',
-      'type'    => 'checkbox',
-      'title'   => 'Checkbox with categories',
-      'options' => 'categories',
-    ),
 
   )
 ) );
@@ -511,99 +225,15 @@ CSF::createSection( $prefix, array(
 //
 CSF::createSection( $prefix, array(
   'parent'      => 'basic_fields',
-  'title'       => 'Radio',
+  'title'       => 'Pricing',
   'icon'        => 'fas fa-dot-circle',
-  'description' => 'Visit documentation for more details on this field: <a href="http://codestarframework.com/documentation/#/fields?id=radio" target="_blank">Field: radio</a>',
+  'description' => 'WP Theme',
   'fields'      => array(
 
     array(
-      'id'      => 'opt-radio-1',
-      'type'    => 'radio',
-      'title'   => 'Radio',
-      'options' => array(
-        'opt-1' => 'Option 1',
-        'opt-2' => 'Option 2',
-        'opt-3' => 'Option 3',
-      ),
-    ),
-
-    array(
-      'id'      => 'opt-radio-2',
-      'type'    => 'radio',
-      'title'   => 'Radio with default',
-      'options' => array(
-        'opt-1' => 'Option 1',
-        'opt-2' => 'Option 2',
-        'opt-3' => 'Option 3',
-      ),
-      'default' => 'opt-2',
-    ),
-
-    array(
-      'id'      => 'opt-radio-3',
-      'type'    => 'radio',
-      'title'   => 'Radio with inline style',
-      'inline'  => true,
-      'options' => array(
-        'opt-1' => 'Option 1',
-        'opt-2' => 'Option 2',
-        'opt-3' => 'Option 3',
-      ),
-    ),
-
-    array(
-      'id'        => 'opt-radio-4',
-      'type'      => 'radio',
-      'title'     => 'Radio with group related options',
-      'options'   => array(
-        'Group 1' => array(
-          'opt-1' => 'Option 1',
-          'opt-2' => 'Option 2',
-          'opt-3' => 'Option 3',
-        ),
-        'Group 2' => array(
-          'opt-4' => 'Option 4',
-          'opt-5' => 'Option 5',
-          'opt-6' => 'Option 6',
-        ),
-      ),
-    ),
-
-    array(
-      'id'       => 'opt-radio-5',
-      'type'     => 'radio',
-      'title'    => 'Radio testing on many items',
-      'options'  => array(
-        'opt-1'  => 'Option 1',
-        'opt-2'  => 'Option 2',
-        'opt-3'  => 'Option 3',
-        'opt-4'  => 'Option 4',
-        'opt-5'  => 'Option 5',
-        'opt-6'  => 'Option 6',
-        'opt-7'  => 'Option 7',
-        'opt-8'  => 'Option 8',
-        'opt-9'  => 'Option 9',
-        'opt-10' => 'Option 10',
-        'opt-11' => 'Option 11',
-        'opt-12' => 'Option 12',
-        'opt-13' => 'Option 13',
-        'opt-14' => 'Option 14',
-        'opt-15' => 'Option 15',
-      ),
-      'desc'     => 'Vertical scroll showing automatically after add many items'
-    ),
-
-    array(
-      'type'    => 'notice',
-      'style'   => 'info',
-      'content' => 'Radio with <strong>predefined wp query</strong> options similar like <strong>select</strong> field. (see select field for all options models.)',
-    ),
-
-    array(
-      'id'      => 'opt-radio-6',
-      'type'    => 'radio',
-      'title'   => 'Radio with categories',
-      'options' => 'categories',
+      'id'    => 'emergency_number',
+      'type'  => 'text',
+      'title' => 'Emergency Number',
     ),
 
   )

@@ -95,12 +95,38 @@ if(!function_exists('doctortheme')){
 
     }
 }
+
+if(!function_exists('myMenus')){
+    // active menu item
+    function activeMenu($menu_items){
+        $menu_items[1]->classes[] = 'active';
+        return $menu_items;
+    }
+    add_filter( 'wp_nav_menu_objects', 'activeMenu');
+
+
+    function myMenus(){
+        register_nav_menus(array(
+            'top_menu' => __('Top menu', 'textdomain'),
+            'primary_menu' => __('Primary menu', 'textdomain'),
+            'footer_menu' => __('Footer menu', 'textdomain')
+        ));
+    }
+}
+
+add_action( 'init', 'myMenus');
+
+
+
+
+
     // for custom post page not found error solve
 flush_rewrite_rules( false );
 
     // codestar frameword
 require_once get_theme_file_path(). '/inc/theme-option/codestar-framework.php';
 require_once get_theme_file_path(). '/inc/theme-option/samples/codeStarFrameword.php';
+// require_once get_theme_file_path(). '/inc/theme-option/samples/admin-options.php';
 
     // all meta box function
 require get_template_directory()."/inc/customPost/all_meta_box.php";
