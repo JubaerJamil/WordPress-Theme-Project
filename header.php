@@ -106,6 +106,7 @@
 							 	wp_nav_menu( array(
 									'theme_location' => 'primary_menu',
 									"container_class" => 'nav menu',
+                                    'add_li_class'  => 'liClass'
 								));							 
 							?>
 

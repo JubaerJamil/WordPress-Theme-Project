@@ -16,7 +16,7 @@ if(!function_exists('schedule_section')){
                 'title', 'author', 'editor', 'excerpt'
             ),
             'capability_type' => 'post',
-            'menu_position' => 8
+            'menu_position' => 12
         ));
     }
 }

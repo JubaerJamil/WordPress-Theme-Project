@@ -96,30 +96,6 @@ if(!function_exists('doctortheme')){
     }
 }
 
-if(!function_exists('myMenus')){
-    // active menu item
-    function activeMenu($menu_items){
-        $menu_items[1]->classes[] = 'active';
-        return $menu_items;
-    }
-    add_filter( 'wp_nav_menu_objects', 'activeMenu');
-
-
-    function myMenus(){
-        register_nav_menus(array(
-            'top_menu' => __('Top menu', 'textdomain'),
-            'primary_menu' => __('Primary menu', 'textdomain'),
-            'footer_menu' => __('Footer menu', 'textdomain')
-        ));
-    }
-}
-
-add_action( 'init', 'myMenus');
-
-
-
-
-
     // for custom post page not found error solve
 flush_rewrite_rules( false );
 
@@ -139,3 +115,13 @@ require get_template_directory()."/inc/customPost/service_section.php";
 require get_template_directory()."/inc/customPost/schedule.php";
 require get_template_directory()."/inc/customPost/portfolio.php";
 require get_template_directory()."/inc/customPost/client.php";
+require get_template_directory()."/inc/customPost/pricing.php";
+
+require get_template_directory()."/inc/myShortCode.php";
+require get_template_directory()."/inc/theme_menu_code.php";
+
+require get_template_directory()."/inc/tgm/class-tgm-plugin-activation.php";
+require get_template_directory()."/inc/tgm/myactivision.php";
+
+require get_template_directory()."/inc/cbm2/init.php";
+require get_template_directory()."/inc/cbm2/myCustomField.php";
